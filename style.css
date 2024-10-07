@@ -431,7 +431,7 @@ h2 {
 
 @media (max-width: 1200px) {
     
-    #baboutme div {
+    #aboutme div {
         flex-direction: column;
         max-width: 900px;
     }
