@@ -1,17 +1,3 @@
-/*
-Name: Muhammad Hazmin Firdaus bin Chik
-Programme: BSc (Hons) Computing
-Semester: 2201
-Module: Web Design and Development
-Lecturer: David Petryca
-Assignment Title: Petr Bakla Web Redesign
-Student Declaration: I declare that the work contained in this assignment was
-researched and prepared by me, except where acknowledgement of sources is made.
-I understand that the college can and will test any work submitted by me for
-plagiarism. The attachment of this statement on any electronically submitted
-assignments will be deemed to have the same authority as a signed statement.
-*/
-
 var prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
