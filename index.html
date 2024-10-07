@@ -1,12 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petr Bakla</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.min.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="media/favicon/favicon.ico"/>
 </head>
-<body>
-    <h1>Welcome to my Portfolio</h1>
+<body id="page">
+    
+    <div id="loading">
+        <img src="media/metronome.gif" alt="Loading..."/>
+    </div>
+    
+    <nav id="nav">
+        
+        <a href="#"><img id="navlogo"  src="media/favicon/android-chrome-192x192.png" alt="nav-logo"/></a>
+        
+        <ul id="navlink">    
+            <li><a href="#">Home</a></li>
+            <li><a href="#biography">Biography</a></li>
+            <li><a href="#discography">Discography</a></li>
+            <li><a href="#mailing-list">Subscribe</a></li>
+        </ul>
+        
+        <ul id="navsocial">
+            <li><a href="#"><svg class="icon facebook"><use href="media/social-icons.svg#facebook"></use></svg></a></li>
+            <li><a href="#"><svg class="icon instagram"><use href="media/social-icons.svg#instagram"></use></svg></a></li>
+            <li><a href="#"><svg class="icon youtube"><use href="media/social-icons.svg#youtube"></use></svg></a></li>
+            <li><a href="https://twitter.com/benjychik" target="blank"><svg class="icon twitter"><use href="media/social-icons.svg#twitter"></use></svg></a></li>
+        </ul>
+        
+    </nav>
+    
+    <header>
+        
+        <nav id="hamburgernav">
+            
+            <ul id="hamburgernavlink">    
+                <li><a href="#">Home</a></li>
+                <li><a href="#biography">Biography</a></li>
+                <li><a href="#discography">Discography</a></li>
+                <li><a href="#mailing-list">Subscribe</a></li>
+            </ul>
+        
+            <ul id="hamburgernavsocial">
+                <li><a href="#"><svg class="icon facebook"><use href="media/social-icons.svg#facebook"></use></svg></a></li>
+                <li><a href="#"><svg class="icon instagram"><use href="media/social-icons.svg#instagram"></use></svg></a></li>
+                <li><a href="#"><svg class="icon youtube"><use href="media/social-icons.svg#youtube"></use></svg></a></li>
+                <li><a href="https://twitter.com/benjychik" target="blank"><svg class="icon twitter"><use href="media/social-icons.svg#twitter"></use></svg></a></li>
+            </ul>
+            
+        </nav>
+        
+        <div id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+       </div>
+        
+        <img id="logo" src="media/logo-piano.jpg" alt="logo">
+        
+        <h1 id="headline"><span>Petr Bakla</span> <span>Classical composer</span></h1>
+        
+        <a href="#discography" id="discoverbtn">Discover Now</a>
+        
+    </header>
+
+    <main>
+        
+        <section id="biography">
+            
+            <h2>Biography</h2>
+            
+            <div>
+                <img src="media/bio/bakla_portrait.jpg" alt="Potrait of Petr Bakla">
+                <p>Born in 1980 in Prague, Petr Bakla often employs basic pitch-based material&nbsp;(typically the chromatic and the whole-tone scales) in his compositions. He is interested in constructing situations and structural contexts in which these frugal musical elements can acquire a unique expressiveness and energy. A frequent feature of Bakla's work is a simultaneous course of two musical/sound layers which, although usually markedly differing in dynamics to allow for a sense of "figure and background", are not mutually subordinating - they are of equal importance, their "friction" creating specific tension and ambiguity.</p>
+            </div>
+            
+            <div>
+                <p>Bakla's music has been performed in Austria, the Czech Republic, France, Germany, Italy, the Netherlands, Poland, Spain, Switzerland, Armenia, Ukraine and the United States (NYC, Boston, San Diego ao), in many cases commissioned and/or performed by distinguished musicians. Of special importance has been the collaboration with the Ostrava Center for New Music.</p>
+                <img src="media/bio/bakla-island.jpg">
+            </div>
+            
+            <div>
+                <img src="media/bio/beinhauer-bakla.jpg">
+                <p>Petr Bakla studied music at the Academy of Performing Arts in Prague, took part in several composition courses and workshops home and abroad and was awarded scholarships and residencies. He is self-taught.</p>
+            </div>
+            
+        </section>
+        
+        <section id="discography">
+            
+            <h2>Discography</h2>
+            
+            <div id="grid">
+                
+                <div class="container">
+                    <a href="#stream">
+                        <img src="media/album/young_blood.jpg">
+                        <div class="middle">
+                            <div class="title">Young Blood</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="container">
+                    <a href="#stream">
+                        <img src="media/album/ostravka_banda.jpg">
+                        <div class="middle">
+                            <div class="title">Ostravská Banda</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="container">
+                    <a href="#stream">
+                        <img src="media/album/ostrava_2009.jpg">
+                        <div class="middle">
+                            <div class="title">Ostrava Days 2009</div>
+                        </div>
+                    </a>
+                </div >
+                
+                <div class="container">
+                    <a href="#stream">
+                        <img src="media/album/ostrava_days.jpg">
+                        <div class="middle">
+                            <div class="title">Ostrava Days 2013</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div><img src="media/grid/statue.jpg"></div>
+                
+                <div class="container">
+                    <a href="#stream">
+                        <img src="media/album/ostrava_19-21.jpg">
+                        <div class="middle">
+                            <div class="title">Ostrava Days 2009</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="container">
+                    <a href="#stream">
+                        <img src="media/album/summerwork_sm.jpg">
+                        <div class="middle">
+                            <div class="title">Pieces</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="container">
+                    <a href="#stream">
+                        <img src="media/album/usableness_portfolio_sm.jpg">
+                        <div class="middle">
+                            <div class="title">Portfolio</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="container">
+                    <a href="#stream">
+                        <img src="media/album/petr_bakla.jpg">
+                        <div class="middle">
+                            <div class="title">Piano Concerto</div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        <section id="listen">
+            
+            <h2>My most acclaimed piece</h2>
+            <p>Petr Bakla's No. 4</p>
+            
+            <audio controls> 
+                <source src="media/petr%20bakla%20no%204.mp3" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
+        </section>
+        
+        <section id="stream">
+            
+            <h2>Stream my music</h2>
+            
+            
+            <div id="streambtns">
+                <a href="https://open.spotify.com/artist/7KadUWeSF2wsc7b0T31P4d" target="_blank">
+                        <div><img src="media/streaming/spotify.png"></div>
+                        <div>Spotify</div>
+                </a>
+            
+                <a href="https://open.spotify.com/artist/7KadUWeSF2wsc7b0T31P4d" target="_blank">
+                        <div><img src="media/streaming/apple%20music.png"></div>
+                        <div>Apple Music</div>
+                </a>
+            
+                <a href="https://open.spotify.com/artist/7KadUWeSF2wsc7b0T31P4d" target="_blank">
+                        <div><img src="media/streaming/tidal.png"></div>
+                        <div>Tidal</div>
+                </a>
+            
+                <a href="https://open.spotify.com/artist/7KadUWeSF2wsc7b0T31P4d" target="_blank">
+                        <div><img src="media/streaming/soundcloud.png"></div>
+                        <div>Soundcloud</div>
+                </a>
+                </div>
+        
+        </section>
+        
+        <section id="mailing-list">
+            
+            <h2>Subscribe</h2>
+            
+            <form action="" method="post">
+                
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email-input" required>
+                
+                <label for="country">Country <span class="required">*</span></label>
+                <select type="country" name="country" required>
+                    <option value="" disabled selected hidden>Select your country</option>
+                    <option value="australia">Australia</option>
+                    <option value="czech">Czech Republic</option>
+                    <option value="malaysia">Malaysia</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <span>Subscribe to email updates from:</span> 
+                <span class="switch"><input id="switch" type="checkbox" name="petr" value="petr" checked required>Petr Bakla</span>
+            
+                <div id="formbtns">
+                    <input type="reset" id="cancel" value="Cancel">
+                    <input type="submit" id="submit" value="Subscribe!">
+                </div>
+            </form>
+        
+        </section>
+        
+    </main>
+    
+    <footer id="footer">
+         <ul id="footer-social">
+            <li><a href="#"><svg class="icon facebook"><use href="media/social-icons.svg#facebook"></use></svg></a></li>
+            <li><a href="#"><svg class="icon instagram"><use href="media/social-icons.svg#instagram"></use></svg></a></li>
+            <li><a href="#"><svg class="icon youtube"><use href="media/social-icons.svg#youtube"></use></svg></a></li>
+            <li><a href="https://twitter.com/benjychik" target="blank"><svg class="icon twitter"><use href="media/social-icons.svg#twitter"></use></svg></a></li>
+        </ul>
+        <p>Design by Hazmin</p>
+    </footer>
+    
+    <script src="app.js"></script>
 </body>
 </html>
