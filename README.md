@@ -1,2 +1,2 @@
 This is a repository for my portfolio.
-Visit at [https://hazminfirdaus.github.io/portfolio/](Hazmin Chik)
+Visit at [Hazmin Chik](https://hazminfirdaus.github.io/portfolio/)
