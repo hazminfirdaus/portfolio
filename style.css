@@ -70,7 +70,7 @@ header {
 
 header::before {
     content: "";
-    background-image: url(media/the-concert.jpg);
+    background-image: url(media/main.jpg);
     background-size: cover;
     background-position: center;
     position: absolute;
