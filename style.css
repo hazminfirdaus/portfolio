@@ -420,7 +420,7 @@ h2 {
     }
 }
 
-#biography {
+#aboutme {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -431,35 +431,35 @@ h2 {
 
 @media (max-width: 1200px) {
     
-    #biography div {
+    #baboutme div {
         flex-direction: column;
         max-width: 900px;
     }
     
-    #biography img {
+    #aboutme img {
         width: 250px;
         height: 250px;
     }
     
-    #biography div:nth-child(3), #biography div:nth-child(4) {
+    #aboutme div:nth-child(3), #aboutme div:nth-child(4) {
         display: none;
     } 
 }
 
 @media (max-width: 400px) {
-    #biography div {
+    #aboutme div {
        max-width: 300px;
     }
 }
  
-#biography div {
+#aboutme div {
     display: flex;
     align-content: center;
     align-items: center;
     margin: 0 auto;
 }
 
-#biography img {
+#aboutme img {
     display: block;
     height: 280px;
     width: 280px;
@@ -469,20 +469,20 @@ h2 {
 }
 
 @media (max-width: 1200px) {
-    #biography img {
+    #aboutme img {
         width: 250px;
         height: 250px;
     }
 }
 
 @media (max-width: 600px) {
-    #biography img {
+    #aboutme img {
         width: 200px;
         height: 200px;
     }
 }
 
-#biography p {
+#aboutme p {
     max-width: 1200px;
     text-align: center;
     margin: 0 auto;
