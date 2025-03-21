@@ -706,7 +706,6 @@ audio {
 form {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 2rem auto;
@@ -738,7 +737,8 @@ form:hover {
 
 label {
     text-transform: uppercase;
-    display: inline; /* Ensure the label is inline */
+    letter-spacing: 3px;
+    display: inline-flex; /* Ensure the label is inline */
     margin-bottom: 10px; /* Add space below the label if needed */
     vertical-align: middle;
 }
@@ -775,9 +775,11 @@ input:focus, select:focus {
 
 #msg-input {
     min-height: 100px; /* Adjust this value to make the input box taller */
-    width: 80%; /* Make the textarea fill the available width */
+    width: 100%; /* Make the textarea fill the available width */
     padding: 10px; /* Optional: adds padding inside the textarea for better text visibility */
     font-size: 16px; /* Optional: adjust font size for better readability */
+    font-family: inherit;
+    font-weight: 600;
 }
 
 
