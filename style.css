@@ -738,8 +738,9 @@ form:hover {
 
 label {
     text-transform: uppercase;
-    display: inline-block; /* Ensure the label is inline */
+    display: inline; /* Ensure the label is inline */
     margin-bottom: 10px; /* Add space below the label if needed */
+    vertical-align: middle;
 }
 
 .required {
@@ -779,15 +780,6 @@ input:focus, select:focus {
     font-size: 16px; /* Optional: adjust font size for better readability */
 }
 
-select {
-    margin-bottom: 30px;
-    color: #B2BBC3;
-    cursor: pointer;
-}
-
-form option {
-    background-color: #1a1a1a;
-}
 
 form span {
     display: block;
