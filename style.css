@@ -26,7 +26,7 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Montserrats', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #fff;
 }
 
@@ -47,7 +47,7 @@ body {
 
 #loading img {
     z-index: 100;
-    width: 300px;
+    width: 250px;
 }
 
 @media (max-width: 600px) {
@@ -82,7 +82,7 @@ header::before {
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    will-change: transform;
+    will-change: transform, opacity;
     z-index: -1;
 }
 
@@ -94,7 +94,7 @@ header::before {
     
     50% {
         transform-origin: 10%;
-        transform: scale3d(1.1,1.1,1);
+        transform: scale3d(1.15,1.15,1);
     }
     
      75% {
@@ -113,10 +113,12 @@ header::before {
     width: 100%;
     height: 4rem;
     top: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 20px;
     z-index: 2;
     transition: all 0.3s;
 }
@@ -133,7 +135,7 @@ header::before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: -1;   
+    z-index: -1;
     }
 
 #hamburgernavlink {
@@ -184,12 +186,13 @@ header::before {
 
     #hamburger span {
         display: block;
-        width: 100%;
-        height: 9px;
+        width: 80%;
+        height: 5px;
         background-color: #FFF;
         position: absolute;
         border-radius: 9px;
         transition: all 0.2s;
+        cursor: pointer;
     }
 
     #hamburger span:nth-child(1) {
@@ -246,21 +249,25 @@ header::before {
 
 #navlink {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0;
     list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#navlink a {
+#navlink li a {
     display: block;
     text-decoration: none;
     color: #bbb;
     text-align: center;
-    padding: 15px 25px;
+    padding: 10px 20px;
+    white-space: nowrap;
     transition: all 0.3s;
 }
+
 
 #navlink a:hover {
     color: #fff;
@@ -278,8 +285,7 @@ header::before {
 
 #navsocial {
     display: flex;
-    padding: 0;
-    margin-right: 25px;
+    gap: 15px;
     list-style: none;
 }
 
@@ -287,7 +293,7 @@ header::before {
     transform: scale(1.5) rotate(360deg);
 }
 
-.facebook:hover {
+.linkedin:hover {
     color: #3b5998;
 }
 
@@ -295,8 +301,8 @@ header::before {
     color: #f4a818;
 }
 
-.youtube:hover {
-    color: #f00;
+.github:hover {
+    color: #55acee;
 }
 
 .twitter:hover {
@@ -338,6 +344,7 @@ h1 span:first-child {
     font-weight: 700;
     font-size: 100px;
     letter-spacing: 10px;
+    animation: 2s pulsate infinite;
 }
 
 h1 span:last-child {
@@ -345,7 +352,14 @@ h1 span:last-child {
     font-size: 48px;
     line-height: 1.2;
     font-style: italic;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    display: inline-block; /* Ensures glitch effect applies only to text */
 }
+@keyframes pulsate {
+    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+    50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+    100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+  }
 
 @media (max-width: 1400px) {
     h1 {
@@ -374,8 +388,11 @@ h1 span:last-child {
     font-size: 1.2rem;
     letter-spacing: 1.3px;
     border: 1px solid #FFF;
+    border-radius: 10px;
     padding: 28px 42px;
     transition: all 0.4s;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.4);
     z-index: 5;
 }
 
@@ -427,6 +444,7 @@ h2 {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    color: rgba(255,255,255,0.85)
 }
 
 @media (max-width: 1200px) {
@@ -461,10 +479,12 @@ h2 {
 
 #aboutme img {
     display: block;
-    height: 280px;
-    width: 280px;
+    width: 300px;
+    height: 300;
+    object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 0 25px 20px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px 20px rgba(255, 255, 255, 0.1);
     margin: 0 3rem 3rem 3rem;
 }
 
@@ -494,11 +514,12 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
-    grid-gap: 10px;
+    gap: 1rem;
     max-width: 1200px;
     padding-top: 25px;
     margin: 0 auto;
     position: relative;
+    aspect-ratio: 1 / 0.3;
 }
 
 #grid img {
@@ -508,6 +529,8 @@ h2 {
     opacity: 1;
     transition: 0.5s ease;
     backface-visibility: hidden;
+    object-fit: cover; /* Ensures images fit inside without stretching */
+    border-radius: 10px; /* Optional, adds rounded corners */
 }
 
 #grid .container {
@@ -527,21 +550,22 @@ h2 {
     text-align: center;
 }
 
-@media (max-width:900px) {
-    #grid .middle {
-        margin-top: -450px;
+@media (max-width: 900px) {
+    #grid {
+        grid-template-columns: repeat(1, 1fr); /* Two columns instead of three */
     }
 }
 
-@media (max-width:600px) {
-    #grid .middle {
-       display: none;
+@media (max-width: 600px) {
+    #grid {
+        grid-template-columns: repeat(1, 1fr); /* Single column layout for mobile */
     }
 }
 
 #grid .container:hover {
     transform: scale(0.9);
     box-shadow: 0 0 25px 10px #fff;
+    border-radius: 10px;
 }
 
 #grid .container:hover img {
@@ -555,15 +579,28 @@ h2 {
 #grid .container .title {
     background-color: #1a1a1a;
     color: #fff;
-    text-transform: uppercase;
     font-size: 20px;
     padding: 16px 32px;
     transition: 0.3s ease;
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
     #grid .container .title {
         font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    #grid .container .title {
+        padding: 20px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    #grid .container .title {
+        padding: 8px;
+        font-size: 12px;
     }
 }
 
