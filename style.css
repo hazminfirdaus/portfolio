@@ -738,11 +738,14 @@ form:hover {
 
 label {
     text-transform: uppercase;
-    letter-spacing: 3px;
+    display: inline-block; /* Ensure the label is inline */
+    margin-bottom: 10px; /* Add space below the label if needed */
 }
 
 .required {
-    color: red;
+    color: red; /* Color for the asterisk */
+    margin-left: 5px; /* Optional: Space between label text and asterisk */
+    font-weight: bold; /* Optional: Make the asterisk bold */
 }
 
 input, select {
@@ -771,7 +774,7 @@ input:focus, select:focus {
 
 #msg-input {
     min-height: 100px; /* Adjust this value to make the input box taller */
-    width: 100%; /* Make the textarea fill the available width */
+    width: 80%; /* Make the textarea fill the available width */
     padding: 10px; /* Optional: adds padding inside the textarea for better text visibility */
     font-size: 16px; /* Optional: adjust font size for better readability */
 }
