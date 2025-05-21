@@ -782,6 +782,10 @@ input:focus, select:focus {
     font-weight: 600;
 }
 
+input:focus::placeholder {
+    color: transparent;
+  }
+
 
 form span {
     display: block;
