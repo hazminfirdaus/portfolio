@@ -758,7 +758,7 @@ input:focus, select:focus {
    box-shadow: 0 0 15px 10px rgba(0,0,0,0.5);
 }
 
-#email-input, select {
+#email-input {
     display: block;
     flex-grow: 1;
     width: 300px;
@@ -770,8 +770,9 @@ input:focus, select:focus {
     font-family: inherit;
     font-size: 15px;
     font-weight: 600;
+    text-align: center;
     color: #fff;
-}
+} 
 
 #msg-input {
     min-height: 100px; /* Adjust this value to make the input box taller */
@@ -780,9 +781,10 @@ input:focus, select:focus {
     font-size: 16px; /* Optional: adjust font size for better readability */
     font-family: inherit;
     font-weight: 600;
+    text-align: center;
 }
 
-input:focus::placeholder {
+input:focus::placeholder, textarea:focus::placeholder {
     color: transparent;
   }
 
