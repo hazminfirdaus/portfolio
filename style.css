@@ -279,7 +279,7 @@ header::before {
     display: block;
     width: 1.8rem;
     height: 1.8rem;
-    margin-right: 1.2rem;
+    margin-right: 1rem;
     transition: all 0.3s;
 }
 
@@ -444,6 +444,7 @@ h2 {
     align-content: center;
     align-items: center;
     max-width: 1200px;
+    height: 300px;
     margin: 0 auto;
     color: rgba(255,255,255,0.85)
 }
