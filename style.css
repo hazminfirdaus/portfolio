@@ -294,7 +294,8 @@ header::before {
 }
 
 .linkedin:hover {
-    color: #3b5998;
+    color: white;
+    /* color: #3b5998; */
 }
 
 .instagram:hover {
