@@ -815,6 +815,14 @@ form span {
     background-color: #2e2e2e;
 }
 
+#downloadcv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
 
 #footer {
     position: absolute;
