@@ -507,6 +507,17 @@ h3 {
     margin: 0 3rem 3rem 3rem;
 }
 
+#aboutme a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+#aboutme a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
 @media (max-width: 1200px) {
     #aboutme img {
         width: 250px;
