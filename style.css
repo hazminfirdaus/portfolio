@@ -12,15 +12,15 @@ html {
 }
 
 @media (max-width: 600px) {
-  html {
-    font-size: 14px;
-  }
+    html {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 420px) {
-  html {
-    font-size: 12px;
-  }
+    html {
+        font-size: 12px;
+    }
 }
 
 
@@ -167,9 +167,10 @@ header::before {
     list-style: none;
     display: flex;
     padding: 0;
+    gap: 12px;
 }
 
-@media (max-width:900px) {
+@media (max-width:1000px) {
     #nav {
         display: none;
     }
@@ -319,6 +320,20 @@ header::before {
     border-color: #bbb; 
 }
 
+@media (max-width: 1400px) {
+    #navlink li a {
+        padding: 10px 5px;
+    }
+
+    #navsocial {
+        gap: 5px;
+    }
+
+    .icon {
+        margin-right: 0.5rem;
+    }
+}
+
 @media (max-width: 900px) {
     #logo {
         transform: scale(0.8);
@@ -367,13 +382,13 @@ h1 span:last-child {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     h1 {
         transform: scale(0.5);
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 415px) {
     h1 {
         transform: scale(0.4);
     }
