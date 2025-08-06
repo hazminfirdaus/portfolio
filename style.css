@@ -514,7 +514,7 @@ h3 {
 #aboutme img {
     display: block;
     width: 300px;
-    height: 300;
+    height: 300px;
     object-fit: cover;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -523,14 +523,15 @@ h3 {
 }
 
 #aboutme a {
-    text-decoration: none;
+    display: inline-block;
     color: inherit;
     font-weight: 600;
+    transition: all 0.4s;
 }
 
 #aboutme a:hover {
+    transform: scale(0.99);
     color: #fff;
-    text-decoration: underline;
 }
 
 @media (max-width: 1200px) {
