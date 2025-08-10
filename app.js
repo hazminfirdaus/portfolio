@@ -42,42 +42,46 @@ setTimeout(() => {
     }
 })();
 
-// 🚀 Form validation to prevent empty submissions
+// Contact Form Submission
+// Ensure the form has the correct action URL for your server-side processing
+// Example: <form id="contact-form" action="/submit-form" method="POST">
+// Ensure the form has inputs with IDs: email-input and msg-input
+// Ensure the form has a response element with ID: form-response
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("#mailing-list form");
+    const form = document.getElementById("contact-form");
+    const responseEl = document.getElementById("form-response");
 
-    form.addEventListener("submit", function (e) {
-        const email = document.querySelector("#email-input").value.trim();
-        const message = document.querySelector("#msg-input").value.trim();
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email-input").value.trim();
+        const message = document.getElementById("msg-input").value.trim();
 
         if (!email || !message) {
             alert("Please fill in all required fields.");
-            e.preventDefault(); // Stops form submission
+            return;
+        }
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+            });
+            const result = await response.json();
+
+            if (result.status === "success") {
+                responseEl.textContent = "Your message has been sent!";
+                responseEl.style.color = "green";
+                form.reset();
+            } else {
+                responseEl.textContent = "There was a problem sending your message. Please try again.";
+                responseEl.style.color = "red";
+            }
+        } catch (error) {
+            responseEl.textContent = "Error: Unable to send message.";
+            responseEl.style.color = "red";
         }
     });
-});
-
-document.getElementById("contact-form").addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const responseEl = document.getElementById("form-response");
-
-    const formData = new FormData(form);
-
-    const response = await fetch(form.action, {
-        method: "POST",
-        body: formData,
-    });
-
-    const result = await response.json();
-
-    if (result.status === "success") {
-        responseEl.textContent = "Your message has been sent!";
-        responseEl.style.color = "green";
-        form.reset();
-    } else {
-        responseEl.textContent = "There was a problem sending your message. Please try again.";
-        responseEl.style.color = "red";
-    }
 });
