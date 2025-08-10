@@ -645,6 +645,7 @@ h3 {
 @media (max-width: 600px) {
     #grid {
         grid-template-columns: repeat(1, 1fr); /* Single column layout for mobile */
+        gap: 1rem; /* Reduced gap for smaller screens */
     }
 }
 
