@@ -1,6 +1,8 @@
 <?php
+header('Content-Type: application/json');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "contact@hazminchik.com"; // 🔁 Replace with your actual email
+    $to = "contact@hazminchik.com"; // Replace with your actual email
     $subject = "New message from your portfolio";
 
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
@@ -14,11 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "Message:\n$message\n";
 
     if (mail($to, $subject, $body, $headers)) {
-        echo "Message sent successfully!";
+        echo json_encode(["status" => "success"]);
     } else {
-        echo "Sorry, something went wrong. Please try again later.";
+        echo json_encode(["status" => "error"]);
     }
-} else {
-    echo "Invalid request.";
+    exit;
 }
+
+http_response_code(405);
+echo json_encode(["status" => "invalid_method"]);
+exit;
 ?>
