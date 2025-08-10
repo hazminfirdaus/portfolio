@@ -72,12 +72,23 @@ document.addEventListener("DOMContentLoaded", function () {
             const result = await response.json();
 
             if (result.status === "success") {
-                responseEl.textContent = "Your message has been sent!";
-                responseEl.style.color = "green";
+                responseEl.textContent = "Thanks! Your message has been sent :)";
+                responseEl.style.color = "#28a745";
+                responseEl.classList.add("visible");
                 form.reset();
+
+                // Fade out after 4 seconds
+                setTimeout(() => {
+                    responseEl.classList.remove("visible");
+                }, 4000);
             } else {
-                responseEl.textContent = "There was a problem sending your message. Please try again.";
+                responseEl.textContent = "Sorry, there was a problem sending your message. Please try again later :(";
                 responseEl.style.color = "red";
+                responseEl.classList.add("visible");
+
+                setTimeout(() => {
+                    responseEl.classList.remove("visible");
+                }, 4000);
             }
         } catch (error) {
             responseEl.textContent = "Error: Unable to send message.";

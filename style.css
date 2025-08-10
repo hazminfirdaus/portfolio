@@ -888,6 +888,14 @@ form span {
     background-color: #2e2e2e;
 }
 
+#form-response {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+#form-response.visible {
+    opacity: 1;
+}
+
 #downloadcv {
     display: flex;
     flex-direction: column;
