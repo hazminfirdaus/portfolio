@@ -1,15 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-require 'vendor/autoload.php'; // Ensure you have PHPMailer installed via Composer
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-$mail = new PHPMailer(true);
-
-// Load config
-$config = require __DIR__ . '/../config.php'; // adjust path if config.php is elsewhere
+$config = require __DIR__ . '/../config.php';
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
@@ -18,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 }
 
 $email = filter_var($_POST["email"] ?? "", FILTER_SANITIZE_EMAIL);
-$message = htmlspecialchars($_POST["message"] ?? "", ENT_QUOTES, 'UTF-8');
+$message = trim($_POST["message"] ?? "");
 
 if (empty($email) || empty($message)) {
     echo json_encode(["status" => "error", "message" => "Please fill in all required fields."]);
@@ -28,6 +20,11 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo json_encode(["status" => "error", "message" => "Invalid email address."]);
     exit;
 }
+
+require 'vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 try {
     $mail = new PHPMailer(true);
@@ -52,4 +49,3 @@ try {
 } catch (Exception $e) {
     echo json_encode(["status" => "error", "message" => "Mailer Error: {$mail->ErrorInfo}"]);
 }
-?>
