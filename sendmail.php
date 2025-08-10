@@ -1,23 +1,25 @@
 <?php
-// Always send JSON
 header('Content-Type: application/json');
 
-// Allow only POST requests
+require 'vendor/autoload.php'; // Ensure you have PHPMailer installed via Composer
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+$mail = new PHPMailer(true);
+
+// Load config
+$config = require __DIR__ . '/../config.php'; // adjust path if config.php is elsewhere
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     echo json_encode(["status" => "error", "message" => "Invalid request method."]);
     exit;
 }
 
-// ===== CONFIGURATION =====
-$to = "contact@hazminchik.com"; // <-- Change this to your actual email
-$subject = "New message from your portfolio site";
-
-// ===== SANITIZE INPUTS =====
 $email = filter_var($_POST["email"] ?? "", FILTER_SANITIZE_EMAIL);
 $message = htmlspecialchars($_POST["message"] ?? "", ENT_QUOTES, 'UTF-8');
 
-// ===== BASIC VALIDATION =====
 if (empty($email) || empty($message)) {
     echo json_encode(["status" => "error", "message" => "Please fill in all required fields."]);
     exit;
@@ -27,20 +29,27 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// ===== EMAIL HEADERS =====
-$headers = "From: {$email}\r\n";
-$headers .= "Reply-To: {$email}\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+try {
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = $config['smtp_host'];
+    $mail->SMTPAuth = true;
+    $mail->Username = $config['smtp_username'];
+    $mail->Password = $config['smtp_password'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = $config['smtp_port'];
 
-// ===== EMAIL BODY =====
-$body = "You have received a new message from your portfolio site:\n\n";
-$body .= "Email: {$email}\n\n";
-$body .= "Message:\n{$message}\n";
+    $mail->setFrom($config['smtp_username'], 'Portfolio Contact Form');
+    $mail->addAddress($config['recipient_email']);
+    $mail->addReplyTo($email);
 
-// ===== SEND EMAIL =====
-if (mail($to, $subject, $body, $headers)) {
+    $mail->isHTML(false);
+    $mail->Subject = "New message from your portfolio site";
+    $mail->Body    = "Email: {$email}\n\nMessage:\n{$message}";
+
+    $mail->send();
     echo json_encode(["status" => "success", "message" => "Message sent successfully!"]);
-} else {
-    echo json_encode(["status" => "error", "message" => "Failed to send message. Please try again later."]);
+} catch (Exception $e) {
+    echo json_encode(["status" => "error", "message" => "Mailer Error: {$mail->ErrorInfo}"]);
 }
 ?>

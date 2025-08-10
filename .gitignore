@@ -1,3 +1,4 @@
 # Ignore configuration files
 # This file should not be tracked by git as it contains sensitive information
 config.php
+/vendor/
