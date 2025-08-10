@@ -168,7 +168,7 @@
             
             <h2>Contact Me</h2>
             
-            <form action="sendmail.php" method="POST">
+            <form id="contact-form" action="sendmail.php" method="POST">
                 <input type="hidden" name="_subject" value="New message from your portfolio site.">
                 
                 <label for="email-input">Your Email: <span class="required">*</span></label>
@@ -181,6 +181,8 @@
                     <input type="reset" id="cancel" value="Cancel">
                     <input type="submit" id="submit" value="Send">
                 </div>
+
+                <p id="form-response" style="margin-top: 1rem;"></p>
             </form>
 
             <div id="downloadcv">
