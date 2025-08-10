@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 4000);
             } else {
                 responseEl.textContent = "Sorry, there was a problem sending your message. Please try again later :(";
-                responseEl.style.color = "red";
+                responseEl.style.color = "#dc3545";
                 responseEl.classList.add("visible");
 
                 setTimeout(() => {
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } catch (error) {
             responseEl.textContent = "Error: Unable to send message.";
-            responseEl.style.color = "red";
+            responseEl.style.color = "#dc3545";
         }
     });
 });
