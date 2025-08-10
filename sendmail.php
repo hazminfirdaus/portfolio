@@ -33,7 +33,7 @@ try {
     $mail->SMTPAuth = true;
     $mail->Username = $config['smtp_username'];
     $mail->Password = $config['smtp_password'];
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = $config['smtp_port'];
 
     $mail->setFrom($config['smtp_username'], 'Portfolio Contact Form');
