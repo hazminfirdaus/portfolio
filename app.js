@@ -56,3 +56,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.getElementById("contact-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const responseEl = document.getElementById("form-response");
+
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+    });
+
+    const result = await response.json();
+
+    if (result.status === "success") {
+        responseEl.textContent = "Your message has been sent!";
+        responseEl.style.color = "green";
+        form.reset();
+    } else {
+        responseEl.textContent = "There was a problem sending your message. Please try again.";
+        responseEl.style.color = "red";
+    }
+});
